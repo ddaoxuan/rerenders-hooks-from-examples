@@ -3,13 +3,13 @@ import Link from "next/link";
 const Page = () => {
   return (
     <div>
-      <Link href="/appliances">Appliances</Link>
+      <Link href="/Appliances">Appliances</Link>
       <br />
-      <Link href="/audio">Audio</Link>
+      <Link href="/Audio">Audio</Link>
       <br />
-      <Link href="/Video Games">Video Games</Link>
+      <Link href="/Video%20Games">Video Games</Link>
       <br />
-      <Link href="/Cameras & Camcorders">Cameras & Camcorders</Link>
+      <Link href="/Cameras%20%26%20Camcorders">Cameras & Camcorders</Link>
     </div>
   );
 };

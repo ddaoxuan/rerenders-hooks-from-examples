@@ -11,9 +11,8 @@ Official example under `examples/hooks-next` [https://github.com/algolia/react-i
 ## Questions
 
 - Why those components rerendered twice? Is it hydration?
-- Why breadcrumbs are showing up on this one when calling `useHierarchicalMenu` twice and doesn't on the other one?
 - Why calling `DynamicWidgets` component, makes the standalone components using hooks disappear?
-- Why breadcrumbs disappear when calling `DynamicWidgets`
+- Why breadcrumbs disappear when calling `DynamicWidgets`?
 
 - Does that mean that we can either and only call `DynamicWidgets` or standalone components?
-- How do we debug algolia in order to better understand the issue?
+- How do we debug algolia in order to better understand the problems we're facing?

@@ -11,7 +11,7 @@ import {
   InstantSearchServerState,
   InstantSearchSSRProvider,
   DynamicWidgets,
-  RefinementList
+  RefinementList,
 } from "react-instantsearch-hooks-web";
 import { getServerState } from "react-instantsearch-hooks-server";
 import { history } from "instantsearch.js/es/lib/routers/index.js";
@@ -66,12 +66,12 @@ export default function HomePage({ serverState, url }: HomePageProps) {
           router: history({
             getLocation() {
               if (typeof window === "undefined") {
-                return (new URL(url!) as unknown) as Location;
+                return new URL(url!) as unknown as Location;
               }
 
               return window.location;
-            }
-          })
+            },
+          }),
         }}
       >
         <div className="Container">
@@ -81,7 +81,7 @@ export default function HomePage({ serverState, url }: HomePageProps) {
             <HierarchicalMenu />
             <Pills />
             <div>
-              <h3>Dynamic widgets</h3>
+              <h3>Dynamic widgets - comment them out to see it disappearing</h3>
               <DynamicWidgets fallbackComponent={FallbackComponent} />
             </div>
           </div>
@@ -95,20 +95,18 @@ export default function HomePage({ serverState, url }: HomePageProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<HomePageProps> = async function getServerSideProps({
-  req,
-  params
-}) {
-  const protocol = req.headers.referer?.split("://")[0] || "https";
-  const url = `${protocol}://${req.headers.host}${req.url}`;
-  const serverState = await getServerState(<HomePage url={url} />, {
-    renderToString
-  });
+export const getServerSideProps: GetServerSideProps<HomePageProps> =
+  async function getServerSideProps({ req, params }) {
+    const protocol = req.headers.referer?.split("://")[0] || "https";
+    const url = `${protocol}://${req.headers.host}${req.url}`;
+    const serverState = await getServerState(<HomePage url={url} />, {
+      renderToString,
+    });
 
-  return {
-    props: {
-      serverState,
-      url
-    }
+    return {
+      props: {
+        serverState,
+        url,
+      },
+    };
   };
-};

@@ -5,8 +5,8 @@ export const HierarchicalMenu = () => {
     attributes: [
       "hierarchicalCategories.lvl0",
       "hierarchicalCategories.lvl1",
-      "hierarchicalCategories.lvl2"
-    ]
+      "hierarchicalCategories.lvl2",
+    ],
   });
   console.log(items, "hierarchical menu rerender");
   return (
