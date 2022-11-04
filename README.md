@@ -1,5 +1,7 @@
 ## What is this one about
 
+It can be checked here [https://codesandbox.io/s/github/ddaoxuan/rerenders-hooks-from-examples](https://codesandbox.io/s/github/ddaoxuan/rerenders-hooks-from-examples)
+
 This one is clone from an offical example from algolia repo on `hooks-next`, shows off that calling every hook, makes component to rerender twice, just as detached version from the first example based on dhyab proposal where we're actually able to have control over routing
 
 To see the bug happening (disappering `useBreadcrumb` and `useHierarchicalMenu`) - Comment in and out `DynamicWidgets`
